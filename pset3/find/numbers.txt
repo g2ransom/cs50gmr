@@ -1,0 +1,5 @@
+
+haystack[0] = Retry: 
+
+Didn't find needle in haystack.
+

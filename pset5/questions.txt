@@ -1,0 +1,33 @@
+0.  What is pneumonoultramicroscopicsilicovolcanoconiosis?
+    It is an artificial long word said to mean a lung disease caused by inhaling very fine ash and sand dust.
+1.  According to its man page, what does getrusage do?
+    getrusage returns resource usage measures for "who", which can be describes in many different ways.
+2.  Per that same man page, how many members are in a variable of type struct rusage?
+    There are 16 members in a variable of type struct rusage
+3.  Why do you think we pass before and after by reference (instead of by value) to calculate, 
+    even though we’re not changing their contents?
+    Getrusage expects a pointer, and a pointer is also faster compared to using values
+4.  Explain as precisely as possible, in a paragraph or more, how main goes about reading words from a file. 
+    In other words, convince us that you indeed understand how that function’s for loop works.
+    Explanation: intialize int c to equal getting the text file. While we haven't reached the end of the text file, continue to
+    get c (the text file). Previously, we've already set up variables for word, index, and mispellings which we use in this function. If the text
+    file has alphabetical numbers or apostrophes, then we continue with the loop. We set the word[index] = c, which allows to go
+    through each letter of the current word in the text file. If the index is longer than 45(length), then a while loop consumes
+    the rest of the alphabetical string and prepares for a new word. There is a loop that also does the same for digits. If a current
+    word has gone through the initial nested loop and has no digits and isn't too long in character count, then as it exits the loop
+    it is transferred to the else if loop where we deem "the end" of the word with a null zero and proceed to update the word counter.
+    The rest of the loop checked the current word's spelling, calculated time, and adds to the count of mispellings if the word is
+    indeed mispelled.
+5.  Why do you think we used fgetc to read each word’s characters one at a time rather than use fscanf with a format string like 
+    "%s" to read whole words at a time? Put another way, what problems might arise by relying on fscanf alone?
+    Fgetc is better for this situation because fget allows us to evaluate strings character by character, as fscanf is used for
+    full strings. Therefore fscanf will be harder to evaluate. In cases of strings longer than 45, fgetc adjusts, as fscanf will
+    have trouble with this case, touch memory that shouldn't be touches - causing a segmentation fault. Fscanf will also have
+    issues with alphanumerics. Fgetc is overall more flexible
+6.  Why do you think we declared the parameters for check and load as const?
+    To save from potential human error. Notes that you will not be changing the data the pointer is pointing to. Also may help for
+    optimizations.
+7.  TODO
+8.  TODO
+9.  TODO
+10. TODO
